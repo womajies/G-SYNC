@@ -1,0 +1,233 @@
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: $black;
+
+  &__wrapper {
+    position: relative;
+    padding: 11px 0;
+    display: flex;
+    align-items: center;
+
+    @include breakpoint($tablet) {
+      padding: 15px 0;
+    }
+  }
+
+  &__menu {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 56px);
+    background-color: $black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.3s ease-in all;
+
+    @include breakpoint($tablet) {
+      opacity: 1;
+      visibility: visible;
+      position: static;
+      width: 100%;
+      height: auto;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-left: 14px;
+    }
+
+    &--active {
+      opacity: 1;
+      visibility: visible;
+      bottom: 0;
+      left: 0;
+    }
+
+  }
+
+  &__logo {
+    display: inline-flex;
+    transition: 0.3s opacity ease-in;
+
+    svg {
+      @include breakpoint($tablet) {
+        width: 81px;
+        height: 60px;
+      }
+    }
+
+    &:hover {
+      opacity: .9;
+    }
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @include breakpoint($tablet) {
+      flex-direction: row;
+    }
+
+  }
+
+  &__item {
+    width: 100%;
+    text-align: center;
+
+    @include breakpoint($tablet) {
+      height: 100%;
+    }
+  }
+
+  &__link {
+    width: 100%;
+    display: block;
+    padding: 14px 0;
+    font-size: 16px;
+    line-height: 175%;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    color: $white;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s ease-in all;
+
+    @include breakpoint($tablet) {
+      height: 100%;
+      padding: 15px 24px;
+      border-top: none;
+      border-bottom: none;
+    }
+
+    &:hover, &:focus {
+      color: $accent-color;
+      border-top: 1px solid $accent-color;
+      border-bottom: 1px solid $accent-color;
+
+      @include breakpoint($tablet) {
+        border-top: none;
+        border-bottom: none;
+      }
+    }
+    
+  }
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 55px;
+
+  @include breakpoint($tablet) {
+    margin-bottom: 0;
+  }
+
+  &__item {
+    display: flex;
+
+    &:not(:first-child) {
+      margin-left: 12px;
+    }
+  }
+
+  &__link {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    path {
+      transition: .3s all ease-in;
+    }
+
+    &:hover path {
+      fill: $accent-color;
+    }
+  }
+  
+}
+
+.burger {
+  padding: 21px 15px;
+  cursor: pointer;
+  transition: 0.3s ease-in background-color;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  @include breakpoint($tablet) {
+    display: none;
+  }
+
+  &__lines {
+    position: relative;
+    width: 26px;
+    height: 14px;
+  }
+
+  &__line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $white;
+    transition: 0.3s all ease-in;
+    border-radius: 100px;
+  }
+
+  &:hover {
+    background-color: #77b900;
+    outline: $black;
+  }
+
+  &--active {
+    background-color: transparent;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  &--active:hover .burger__line {
+    background-color: #77b900;
+  }
+
+  &__line:first-child {
+    top: 0;
+  }
+
+  &__line:nth-child(2) {
+    top: 50%;
+    margin-top: -1px;
+  }
+
+  &__line:last-child {
+    top: auto;
+    bottom: 0;
+  }
+
+  &--active &__line:first-child {
+    transform: rotate(45deg);
+    top: 50%;
+    margin-top: -1px;
+  }
+
+  &--active &__line:nth-child(2) {
+    display: none;
+  }
+
+  &--active &__line:last-child {
+    transform: rotate(-45deg);
+    top: 50%;
+    margin-top: -1px;
+  }
+}

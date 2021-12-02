@@ -1,0 +1,13 @@
+#buyModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+	.modal-dialog(role='document')
+		form.modal-content(action="#")
+			.modal-header
+				h5#exampleModalLabel.modal-title.title Преимущества G&nbsp;-&nbsp;SYNC
+				button.close(type='button' data-dismiss='modal' aria-label='Close')
+					span(aria-hidden='true') 
+			.modal-body
+				input.modal-input#modal-name(placeholder="Имя" maxlength="30" required)
+				input.modal-input#modal-email(placeholder="Mail" type="email" required)
+			.modal-footer
+				button.btn.modal-btn(type='submit') Купить
+

@@ -1,0 +1,64 @@
+.feature {
+  @include breakpoint($tablet) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto 0;
+    max-width: 290px;
+
+    @include breakpoint($tablet) {
+      max-width: 380px;
+    }
+
+    @include breakpoint($laptop) {
+      max-width: 255px;
+      margin: 50px 0 0;
+    }
+
+    &-link {
+      text-align: center;
+
+      &:hover {
+        svg {
+          fill: rgba(119, 185, 0, 0.25);
+        }
+        path {
+          stroke: $accent-color;
+        }
+      }
+
+      svg {
+        transition: 0.3s all ease-in;
+      }
+
+      path {
+        transition: 0.3s all ease-in;
+      }
+    }
+  }
+
+  &__title {
+    color: $accent-color;
+    margin-top: 28px;
+    text-align: center;
+
+    @include breakpoint($tablet) {
+      text-align: left;
+    }
+
+    span {
+      color: $white;
+      font-weight: 400;
+    }
+  }
+
+  &__descr {
+    color: #e1e1e1;
+    margin: 12px 0 0;
+  }
+}

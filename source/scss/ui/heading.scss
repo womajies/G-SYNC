@@ -1,0 +1,12 @@
+.title {
+	font-family: $headings-font-family;
+	font-weight: $headings-font-weight;
+	text-transform: uppercase;
+	letter-spacing: 0.25px;
+	font-size: 26px;
+	line-height: 36px;
+}
+
+.title-h1 {
+	@extend .title;
+}

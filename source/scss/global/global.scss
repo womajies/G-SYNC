@@ -1,0 +1,19 @@
+// глобальные стили кроме normalize
+
+.container {
+	@include make-container();
+	@include make-container-max-widths();
+}
+
+img {
+	@include img-fluid();
+}
+
+.btn-reset {
+  background-color: transparent;
+  border: none;
+}
+
+a {
+	text-decoration: none;
+}

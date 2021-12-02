@@ -1,0 +1,117 @@
+#buyModal {
+  .modal-dialog {
+    top: 35%;
+  }
+
+  .modal-header {
+    padding-bottom: 0;
+    border: none;
+  }
+
+  .modal-content {
+    background-color: $black;
+    border: 2px solid $accent-color;
+    box-shadow: 0px 0px 20px rgba(119, 185, 0, 0.5);
+    border-radius: 0;
+  }
+
+  .modal-title {
+    width: 100%;
+    margin-top: 57px;
+    color: $white;
+    text-align: center;
+  }
+
+  .modal-body {
+    max-width: 350px;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .modal-input {
+    width: 100%;
+    margin: 20px 0 0;
+    padding: 14px 20px;
+    border: none;
+    font-size: 16px;
+    line-height: 175%;
+    letter-spacing: 0.3px;
+    color: $black;
+
+    &::placeholder {
+      font-size: 16px;
+      line-height: 175%;
+      letter-spacing: 0.3px;
+      color: $black;
+    }
+  }
+
+  .modal-footer {
+    border: none;
+  }
+
+  .modal-btn {
+    width: 350px;
+    height: 56px;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.25px;
+    color: $white;
+    background-color: $accent-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+    margin: 50px auto 0;
+    transition: .3s all ease-in;
+  
+    @include breakpoint($tablet) {
+      width: 192px;
+    }
+  
+    &:hover {
+      border: 2px solid $accent-color;
+      box-shadow: 0px 0px 10px $accent-color;
+      background-color: $black;
+      color: $white;
+    }
+  }
+
+  .close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+      span::before,
+      span::after {
+        background-color: $accent-color;
+      }
+    }
+
+    span {
+      position: relative;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%) rotate(45deg);
+        width: 24px;
+        height: 2px;
+        background-color: $white;
+      }
+
+      &::after {
+        transform: translate(-50%) rotate(-45deg);
+      }
+    }
+  }
+}
