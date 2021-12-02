@@ -35,3 +35,4 @@
 
 2.git- репозиторий с исходниками верстки;
 
+https://vipdeveloper.ru/g-sync/
